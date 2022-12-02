@@ -2,15 +2,13 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="dataSource"
-          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://walab:3306/p3_21800239?useSSL=false"/>
+        <property name="url" value="jdbc:mysql://walab.handong.edu:3306/p3_21800239?useSSL=false"/>
         <property name="username" value="p3_21800239"/>
-        <property name="password" value="Eethe8Uiph" />
+        <property name="password" value="Eethe8Uiph"/>
     </bean>
-    <bean id="jdbcTempate"
-          class="org.springframework.jdbc.core.JdbcTemplate">
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
         <property name="dataSource" ref="dataSource"/>
     </bean>
 </beans>

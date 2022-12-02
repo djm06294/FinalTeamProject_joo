@@ -22,16 +22,18 @@ public class BoardController {
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String boardlist(Model model) {
         model.addAttribute("list", boardService.getBoardList());
-        return "list";
+        return "posts";
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String addPost() {
+
         return "addpostform";
     }
     @RequestMapping(value = "/addok", method = RequestMethod.POST)
     public String addPostOK(BoardVO vo) {
-        if(boardService.insertBoard(vo) == 0)
+        int i = boardService.insertBoard(vo);
+        if(i == 0)
             System.out.println("데이터 추가 실패");
         else
             System.out.println("데이터 추가 성공!!!");
@@ -46,7 +48,8 @@ public class BoardController {
     }
     @RequestMapping(value = "/editok", method = RequestMethod.POST)
     public String editPostOk(BoardVO vo) {
-        if(boardService.updateBoard(vo) == 0)
+        int i = boardService.updateBoard(vo);
+        if(i == 0)
             System.out.println("데이터 수정 실패 ");
         else
             System.out.println("데이터 수정 성공!!!");
@@ -54,8 +57,9 @@ public class BoardController {
     }
 
     @RequestMapping(value = "/deleteok/{id}", method = RequestMethod.GET)
-    public String deleteBoard(@PathVariable("id") int id) {
-        if(boardService.deleteBoard(id) == 0)
+    public String deletePost(@PathVariable("id") int id) {
+        int i = boardService.deleteBoard(id);
+        if(i == 0)
             System.out.println("데이터 삭제 실패 ");
         else
             System.out.println("데이터 삭제 성공!!!");
