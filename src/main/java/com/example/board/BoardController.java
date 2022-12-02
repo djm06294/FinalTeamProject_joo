@@ -9,10 +9,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping(value = "/board")
+//@RequestMapping(value="/board")
 public class BoardController {
     @Autowired
     BoardService boardService;
+
+    @RequestMapping(value="/")
+    public String home(){
+        return "index";
+    }
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String boardlist(Model model) {

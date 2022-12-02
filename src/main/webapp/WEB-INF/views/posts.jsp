@@ -3,11 +3,7 @@
 <%@page import="com.example.board.BoardDAO, com.example.board.BoardVO,java.util.*"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%
-	BoardDAO boardDAO = new BoardDAO();
-	List<BoardVO> list = boardDAO.getBoardList();
-	request.setAttribute("list",list);
-%>
+
 <!DOCTYPE html>
 <html>
 <head>

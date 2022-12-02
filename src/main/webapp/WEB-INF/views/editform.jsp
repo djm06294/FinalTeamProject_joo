@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
- <%@page import="com.example.board.dao.BoardDAO, com.example.bean.BoardVO"%>
+ <%@page import="com.example.board.BoardDAO, com.example.board.BoardVO"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -11,14 +11,6 @@
 	<title>Edit Form</title>
 </head>
 <body>
-
-	<%
-		BoardDAO boardDAO = new BoardDAO();
-		String id = request.getParameter("id");
-		BoardVO u = boardDAO.getBoard(Integer.parseInt(id));
-		request.setAttribute("vo", u);
-	%>
-
 	<h1>Edit Form</h1>
 	<form action="editpost.jsp" method="post" enctype="multipart/form-data">
 	<input type="hidden" name="seq" value="${vo.getSeq()}"/>
