@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@page import="com.example.board.BoardDAO, com.example.board.BoardVO"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <!DOCTYPE html>
 <html>
@@ -13,7 +14,7 @@
 </head>
 <body>
 	<h1>Edit Form</h1>
-	<form:form commandName="boardVO" method="POST" action="../editok">
+	<form:form modelAttribute="u" method="POST" action="../editok">
 	<form:hidden path="seq"/>
 		<table id = "edit">
 			<tr><td>Category:</td><td><form:input path="category"/></td></tr>

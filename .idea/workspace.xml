@@ -9,9 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d4a2b1c8-2338-4d20-a6fe-f9dc018bdb5b" name="Changes" comment="4st commit">
+    <list default="true" id="d4a2b1c8-2338-4d20-a6fe-f9dc018bdb5b" name="Changes" comment="5st commit(encoding filter)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/editform.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/editform.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +177,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669969314121</updated>
-      <workItem from="1669969315890" duration="32571000" />
+      <workItem from="1669969315890" duration="34297000" />
     </task>
     <task id="LOCAL-00001" summary="1st">
       <created>1669972518028</created>
@@ -207,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670048070771</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="5st commit(encoding filter)">
+      <created>1670051642352</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1670051642352</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,6 +236,7 @@
     <MESSAGE value="2st commit" />
     <MESSAGE value="3st commit" />
     <MESSAGE value="4st commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="4st commit" />
+    <MESSAGE value="5st commit(encoding filter)" />
+    <option name="LAST_COMMIT_MESSAGE" value="5st commit(encoding filter)" />
   </component>
 </project>
