@@ -12,20 +12,20 @@ public class BoardDAO {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-    private final String BOARD_INSERT = "insert into BOARD (category, title, writer, content, photo) values (?,?,?,?)";
-    private final String BOARD_UPDATE = "update BOARD set category=?, title=?, writer=?, content=?, photo=? where seq=?";
+    private final String BOARD_INSERT = "insert into BOARD (category, title, writer, content) values (?,?,?,?)";
+    private final String BOARD_UPDATE = "update BOARD set category=?, title=?, writer=?, content=? where seq=?";
     private final String BOARD_DELETE = "delete from BOARD  where seq=?";
     private final String BOARD_GET = "select * from BOARD  where seq=?";
     private final String BOARD_LIST = "select * from BOARD order by seq desc";
 
     public int insertBoard(BoardVO vo) {
         System.out.println("===> JDBC로 insertBoard() 기능 처리");
-        String sql = "insert into BOARD (category, title, writer, content, photo) values ("
+        String sql = "insert into BOARD (category, title, writer, content) values ("
                 + "'" + vo.getCategory() + "',"
                 + "'" + vo.getTitle() + "',"
                 + "'" + vo.getWriter() + "',"
-                + "'" + vo.getContent() + "',"
-                + "'" + vo.getPhoto() + "')";
+                + "'" + vo.getContent() + "')";
+        System.out.println("카테고리 -> " + vo.getCategory());
         return jdbcTemplate.update(sql);
     }
 
@@ -41,8 +41,8 @@ public class BoardDAO {
                 + "category= '" + vo.getCategory() + "',"
                 + "title= '" + vo.getTitle() + "',"
                 + "writer= '" + vo.getWriter() + "',"
-                + "content= '" + vo.getContent() + "',"
-                + "photo= '" + vo.getPhoto() + "' where seq=" + vo.getSeq();
+                + "content= '" + vo.getContent()
+                + "' where seq=" + vo.getSeq();
         return jdbcTemplate.update(sql);
     }
 

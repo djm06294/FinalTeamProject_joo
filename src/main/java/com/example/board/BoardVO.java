@@ -3,8 +3,7 @@ package com.example.board;
 import java.util.Date;
 
 public class BoardVO {
-    public BoardVO() {
-    }
+    public BoardVO() {}
     private int seq;
     private String category;
     private String title;

@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" isELIgnored="false" %>
 <%@page import="com.example.board.BoardDAO, com.example.board.BoardVO,java.util.*"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
 
 <!DOCTYPE html>
 <html>
@@ -57,11 +58,10 @@
 <script>
 	function delete_ok(id){
 		var a = confirm("정말로 삭제하겠습니까?");
-		if(a) location.href='deletepost.jsp?id=' + id;
+		if(a) location.href='deleteok/' + id;
 	}
 </script>
 </head>
-<body>
 	<div>
 		<h1 id="p_title">[영잘모_영화 잘아는 사람들의 모임]</h1>
 		<div class="d-flex justify-content-end mb-3">
@@ -71,29 +71,30 @@
 	<div>
 		<table id="list" width="90%">
 		<tr>
-			<th>No</th>
+<%--			<th>No</th>--%>
 			<th>Id</th>
 			<th>Category</th>
 			<th>Title</th>
 			<th>Writer</th>
 			<th>Content</th>
-			<th>Photo</th>
+<%--			<th>Photo</th>--%>
 			<th>Regdate</th>
 			<th>Edit</th>
 			<th>Delete</th>
 		</tr>
-		<c:forEach items="${list}" var="u" varStatus="status">
+		<c:forEach items="${list}" var="u">
+<%--		<c:forEach items="${list}" var="u" varStatus="status">--%>
 			<tr>
-				<td>${fn:length(list)-status.index}</td>
+<%--				<td>${fn:length(list)-status.index}</td>--%>
 				<td>${u.seq}</td>
 				<td>${u.category}</td>
 				<td>${u.title}</td>
 				<td>${u.writer}</td>
 				<td>${u.content}</td>
-				<td>
-					<c:if test="${u.photo ne ''}"><br/>
-					<img src="${pageContext.request.contextPath}/upload/${u.photo}" class="photo" width="300" height="300"></c:if>
-				</td>
+<%--				<td>--%>
+<%--					<c:if test="${u.photo ne ''}"><br/>--%>
+<%--					<img src="${pageContext.request.contextPath}/upload/${u.photo}" class="photo" width="300" height="300"></c:if>--%>
+<%--				</td>--%>
 				<td>${u.regdate}</td>
 				<td>
 					<a href="editform/${u.seq}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
@@ -111,5 +112,5 @@
 	</div>
 	<br/>
 	<%--<a href="addpostform.jsp">Add New Post</a>--%>
-</body>
+</div>
 </html>
