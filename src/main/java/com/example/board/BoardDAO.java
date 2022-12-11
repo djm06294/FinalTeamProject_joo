@@ -1,5 +1,6 @@
 package com.example.board;
 
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -10,49 +11,37 @@ import java.util.List;
 @Repository
 public class BoardDAO {
     @Autowired
-    JdbcTemplate jdbcTemplate;
+    SqlSession sqlSession;
+    //JdbcTemplate jdbcTemplate;
 
-    private final String BOARD_INSERT = "insert into BOARD (category, title, writer, content) values (?,?,?,?)";
-    private final String BOARD_UPDATE = "update BOARD set category=?, title=?, writer=?, content=? where seq=?";
-    private final String BOARD_DELETE = "delete from BOARD  where seq=?";
-    private final String BOARD_GET = "select * from BOARD  where seq=?";
-    private final String BOARD_LIST = "select * from BOARD order by seq desc";
+//    private final String BOARD_INSERT = "insert into BOARD (category, title, writer, content) values (?,?,?,?)";
+//    private final String BOARD_UPDATE = "update BOARD set category=?, title=?, writer=?, content=? where seq=?";
+//    private final String BOARD_DELETE = "delete from BOARD  where seq=?";
+//    private final String BOARD_GET = "select * from BOARD  where seq=?";
+//    private final String BOARD_LIST = "select * from BOARD order by seq desc";
 
     public int insertBoard(BoardVO vo) {
-        System.out.println("===> JDBC로 insertBoard() 기능 처리");
-        String sql = "insert into BOARD (category, title, writer, content) values ("
-                + "'" + vo.getCategory() + "',"
-                + "'" + vo.getTitle() + "',"
-                + "'" + vo.getWriter() + "',"
-                + "'" + vo.getContent() + "')";
-        System.out.println("카테고리 -> " + vo.getCategory());
-        return jdbcTemplate.update(sql);
+        int result = sqlSession.insert("Board.insertBoard", vo);
+        return result;
     }
 
-    // 글 삭제
     public int deleteBoard(int seq) {
-        System.out.println("===> JDBC로 deleteBoard() 기능 처리");
-        String sql = "delete from BOARD where seq = " + seq;
-        return jdbcTemplate.update(sql);
+        int result = sqlSession.insert("Board.deleteBoard", seq);
+        return result;
     }
+
     public int updateBoard(BoardVO vo) {
-        System.out.println("===> JDBC로 updateBoard() 기능 처리");
-        String sql = "update BOARD set title='" + vo.getTitle() + "',"
-                + "category= '" + vo.getCategory() + "',"
-                + "title= '" + vo.getTitle() + "',"
-                + "writer= '" + vo.getWriter() + "',"
-                + "content= '" + vo.getContent()
-                + "' where seq=" + vo.getSeq();
-        return jdbcTemplate.update(sql);
+        int result = sqlSession.insert("Board.updateBoard", vo);
+        return result;
     }
 
     public BoardVO getBoard(int seq) {
-        String sql = "select * from BOARD where seq=" + seq;
-        return jdbcTemplate.queryForObject(sql, new BoardRowMapper());
+        BoardVO one = sqlSession.selectOne("Board.getBoard", seq);
+        return one;
     }
 
     public List<BoardVO> getBoardList(){
-        String sql = "select * from BOARD order by seq desc";
-        return jdbcTemplate.query(sql, new BoardRowMapper());
+        List<BoardVO> list = sqlSession.selectList("Board.getBoardList");
+        return list;
     }
 }

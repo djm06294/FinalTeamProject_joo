@@ -63,7 +63,7 @@
 </script>
 </head>
 	<div>
-		<h1 id="p_title">[영잘모_영화 잘아는 사람들의 모임]</h1>
+		<h1 id="p_title">**한동 중고 마켓**</h1>
 		<div class="d-flex justify-content-end mb-3">
 <%--		<a href="addpostform.jsp" class="btn btn-primary" role="button" aria-pressed="true">Register Now</a>--%>
 			<button type="button" onclick="location.href='add'">Register Now</button><br/>
@@ -71,13 +71,14 @@
 	<div>
 		<table id="list" width="90%">
 		<tr>
-<%--			<th>No</th>--%>
-			<th>Id</th>
-			<th>Category</th>
+			<th>No</th>
 			<th>Title</th>
+			<th>Price</th>
 			<th>Writer</th>
 			<th>Content</th>
-<%--			<th>Photo</th>--%>
+			<th>Meeting Place</th>
+			<th>Number</th>
+			<th>Category</th>
 			<th>Regdate</th>
 			<th>Edit</th>
 			<th>Delete</th>
@@ -87,10 +88,12 @@
 			<tr>
 <%--				<td>${fn:length(list)-status.index}</td>--%>
 				<td>${u.seq}</td>
-				<td>${u.category}</td>
 				<td>${u.title}</td>
-				<td>${u.writer}</td>
+				<td>${u.price}</td>
 				<td>${u.content}</td>
+				<td>${u.place}</td>
+				<td>${u.number}</td>
+				<td>${u.category}</td>
 <%--				<td>--%>
 <%--					<c:if test="${u.photo ne ''}"><br/>--%>
 <%--					<img src="${pageContext.request.contextPath}/upload/${u.photo}" class="photo" width="300" height="300"></c:if>--%>
