@@ -9,17 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d4a2b1c8-2338-4d20-a6fe-f9dc018bdb5b" name="Changes" comment="Changing into SALE">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/board/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/board/UserDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/board/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/board/UserVO.java" afterDir="false" />
+    <list default="true" id="d4a2b1c8-2338-4d20-a6fe-f9dc018bdb5b" name="Changes" comment="Adding login page...">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/board/LoginCheckInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/img/photo.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/board/BoardDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/board/BoardDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/board-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/board-mapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/board/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/board/BoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/board/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/board/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/posts.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/posts.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +30,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="spring-beans.schema" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -66,7 +63,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/jooyoung/IdeaProjects/SpringProject5_1/src/main/java/com/example/board",
+    "last_opened_file_path": "C:/Users/jooyoung/IdeaProjects/SpringProject5_1/src/main/webapp/WEB-INF/img",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -86,12 +83,15 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jooyoung\IdeaProjects\SpringProject5_1\src\main\webapp\WEB-INF\img" />
       <recent name="C:\Users\jooyoung\IdeaProjects\SpringProject5_1\src\main\java\com\example\board" />
       <recent name="C:\Users\jooyoung\IdeaProjects\SpringProject5_1\src\main\resources\mappers" />
       <recent name="C:\Users\jooyoung\IdeaProjects\SpringProject5_1\src\main\webapp\WEB-INF\views" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jooyoung\IdeaProjects\SpringProject5_1\src\main\webapp\resources" />
+      <recent name="C:\Users\jooyoung\IdeaProjects\SpringProject5_1\src\main\webapp" />
       <recent name="C:\Users\jooyoung\IdeaProjects\SpringProject\src\main\resources\mappers" />
       <recent name="C:\Users\jooyoung\IdeaProjects\SpringProject\src\main\webapp\WEB-INF\spring" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
@@ -201,7 +201,7 @@
       <workItem from="1670570352922" duration="7469000" />
       <workItem from="1670772213108" duration="6131000" />
       <workItem from="1670827619499" duration="4906000" />
-      <workItem from="1670833889680" duration="4813000" />
+      <workItem from="1670833889680" duration="12011000" />
     </task>
     <task id="LOCAL-00001" summary="1st">
       <created>1669972518028</created>
@@ -245,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670777604309</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Adding login page...">
+      <created>1670844387352</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1670844387353</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,7 +276,8 @@
     <MESSAGE value="4st commit" />
     <MESSAGE value="5st commit(encoding filter)" />
     <MESSAGE value="Changing into SALE" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changing into SALE" />
+    <MESSAGE value="Adding login page..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding login page..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

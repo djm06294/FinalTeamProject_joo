@@ -64,11 +64,15 @@
 		var a = confirm("정말로 삭제하겠습니까?");
 		if(a) location.href='deleteok/' + id;
 	}
+	// function logout() {
+	// 	location.href='logout';
+	// }
 </script>
 </head>
 	<div>
 		<h1 id="p_title">**한동 중고 마켓**</h1>
 		<div class="d-flex justify-content-end mb-3">
+			<button type="button" onclick="location.href='logout'">logout</button><br/>
 <%--		<a href="addpostform.jsp" class="btn btn-primary" role="button" aria-pressed="true">Register Now</a>--%>
 			<button type="button" onclick="location.href='add'">Register Now</button><br/>
 	</div>

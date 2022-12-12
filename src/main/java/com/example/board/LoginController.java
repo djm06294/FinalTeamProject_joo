@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping(value="/login")
+//@RequestMapping(value="/login")
 public class LoginController {
     @Autowired
     UserServiceImpl service;
 
-    @RequestMapping(value="login", method= RequestMethod.GET)
+    @RequestMapping(value="/", method= RequestMethod.GET)
     public String login(String t, Model model) {
-        return "login";
+        return "/login/login";
     }
 
     @RequestMapping(value="/loginOk", method=RequestMethod.POST)
@@ -28,13 +28,16 @@ public class LoginController {
         if(loginvo != null) {
             System.out.println("로그인 성공!");
             session.setAttribute("login", loginvo);
-            returnURL = "redirect:/login";
+            returnURL = "redirect:/posts";
+        } else {
+            System.out.println("로그인 실패!");
+            returnURL = "redirect:/";
         }
         return returnURL;
     }
-    @RequestMapping(value="/logout")
+    @RequestMapping(value="/logout", method=RequestMethod.GET)
     public String logout(HttpSession session) {
         session.invalidate();
-        return "redirect:/login";
+        return "redirect:/";
     }
 }
