@@ -12,11 +12,12 @@
 <%--    <form action="addok" method="post" enctype="multipart/form-data">--%>
     <form action="addok" method="post">
         <table id="edit">
-            <tr><td>Category:</td><td><input type="text" name="category"/></td></tr>
             <tr><td>Title:</td><td><input type="text" name="title"/></td></tr>
-            <tr><td>Writer:</td><td><input type="text" name="writer"/></td></tr>
+            <tr><td>Price:</td><td><input type="text" name="price"/></td></tr>
             <tr><td>Content:</td><td><textarea cols="50" rows="5" name="content"></textarea></td></tr>
-<%--            <tr><td>Photo:</td><td><input type="file" name="photo"/></td></tr>--%>
+            <tr><td>Place:</td><td><input type="text" vaule="거래희망 장소" name="place"/></td></tr>
+            <tr><td>Number:</td><td><input type="text" name="number"/></td></tr>
+            <tr><td>Category:</td><td><input type="text" name="category"/></td></tr>
         </table>
         <button type="button" onclick="location.href='list'">Lists</button>
         <button type="submit">Register</button>

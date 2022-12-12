@@ -14,12 +14,16 @@
 	  integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
 	<style>
+		/*div {*/
+		/*	background-color: lightyellow;*/
+		/*}*/
 	#p_title {
 		font-size: 30px;
 		text-align: center;
-		background-color: skyblue;
+		color: lightcoral;
+		background-color: white;
 		border-radius: 5px;
-		border: 1px solid;
+		border: 1px solid lightyellow;
 		display: block;
 		width: 500px;
 		height: 50px;
@@ -31,7 +35,7 @@
 	  width: 100%;
 	}
 	#list td, #list th {
-	  border: 1px solid #ddd;
+	  border: 1px solid white;
 	  padding: 8px;
 	  text-align:center;
 	}
@@ -51,8 +55,8 @@
 	  padding-bottom: 12px;
 	  text-align: center;
 	  border-radius: 5px;
-	  background-color: skyblue;
-	  color: white;
+	  background-color: lightcoral;
+	  color: dimgray;
 	}
 </style>
 <script>
@@ -74,7 +78,6 @@
 			<th>No</th>
 			<th>Title</th>
 			<th>Price</th>
-			<th>Writer</th>
 			<th>Content</th>
 			<th>Meeting Place</th>
 			<th>Number</th>
