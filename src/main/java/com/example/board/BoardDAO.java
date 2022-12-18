@@ -5,14 +5,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import java.sql.Connection;
+//import java.sql.Connection;
 import java.util.List;
 
 @Repository
 public class BoardDAO {
     @Autowired
     SqlSession sqlSession;
-    //JdbcTemplate jdbcTemplate;
 
     public int insertBoard(BoardVO vo) {
         int result = sqlSession.insert("Board.insertBoard", vo);
@@ -20,13 +19,13 @@ public class BoardDAO {
     }
 
     public int deleteBoard(int seq) {
-        int result = sqlSession.insert("Board.deleteBoard", seq);
-        return result;
+        int delete = sqlSession.delete("Board.deleteBoard", seq);
+        return delete;
     }
 
     public int updateBoard(BoardVO vo) {
-        int result = sqlSession.insert("Board.updateBoard", vo);
-        return result;
+        int update = sqlSession.update("Board.updateBoard", vo);
+        return update;
     }
 
     public BoardVO getBoard(int seq) {

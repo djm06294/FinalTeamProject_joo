@@ -17,15 +17,20 @@
 	<form:form modelAttribute="u" method="POST" action="../editok">
 	<form:hidden path="seq"/>
 		<table id = "edit">
+			<tr><td>Type:</td><td><form:input path="type"/></td></tr>
 			<tr><td>Title:</td><td><form:input path="title"/></td></tr>
 			<tr><td>Price:</td><td><form:input path="price"/></td></tr>
 			<tr><td>Content:</td><td><form:textarea cols="50" rows="5" path="content"/></td></tr>
+			<tr><td>Writer:</td><td><form:input path="writer"/></td></tr>
 			<tr><td>Place:</td><td><form:input path="place"/></td></tr>
 			<tr><td>Number:</td><td><form:input path="number"/></td></tr>
-			<tr><td>Category:</td><td><form:input path="category"/></td></tr>
-
+<%--				<td>--%>
+<%--					Photo:</td><td><input type="file" name="photo" value="${vo.getPhoto()}"/><c:if test="${vo.getPhoto() ne ''}"><br/>--%>
+<%--					<img src="${pageContext.request.contextPath}/upload/${vo.getPhoto()}" class="photo" width="300" height="300"> </c:if>--%>
+<%--				</td>--%>
 		</table>
 		<input type="submit" value="Edit Post"/>
+		<input type="reset" value="Reset Post"/>
 		<input type="button" value="Cancel" onclick="history.back()"/>
 	</form:form>
 

@@ -1,15 +1,14 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Board">
     <insert id="insertBoard">
-        insert into SALE (title, price, content, place, number, category)
+        insert into SALE (type, title, price, content, writer, place, number)
         values
-            (#{title}, #{price}, #{content}, #{place}, #{number}, #{category})
+            (#{type} , #{title} , #{price} , #{content} , #{writer} , #{place} , #{number})
     </insert>
     <update id="updateBoard">
         update SALE
-        set title=#{title}, price=#{price}, content=#{content}, place=#{place}, number=#{number}, category=#{category}
+        set type=#{type}, title=#{title}, price=#{price}, content=#{content}, writer=#{writer}, place=#{place}, number=#{number}
         where seq=#{seq}
     </update>
     <delete id="deleteBoard">

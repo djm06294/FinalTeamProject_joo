@@ -64,7 +64,7 @@
   </dependencies>
 
   <build>
-    <finalName>SpringProject</finalName>
+    <finalName>SpringProject_joo</finalName>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

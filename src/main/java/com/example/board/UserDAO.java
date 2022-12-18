@@ -1,9 +1,9 @@
-package com.example.board;
+package com.example.board;//package com.example.board;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
+
 @Repository
 public class UserDAO {
     @Autowired
@@ -11,5 +11,4 @@ public class UserDAO {
     public UserVO getUser(UserVO vo) {
         return sqlSession.selectOne("User.getUser", vo);
     }
-
 }

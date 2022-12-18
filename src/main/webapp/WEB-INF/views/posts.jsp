@@ -9,21 +9,18 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>free board</title>
+	<title>HGU 중고 마켓 Main</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
 	  integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+	<link href='https://css.gg/log-out.css' rel='stylesheet'>
 
 	<style>
-		/*div {*/
-		/*	background-color: lightyellow;*/
-		/*}*/
 	#p_title {
 		font-size: 30px;
 		text-align: center;
-		color: lightcoral;
-		background-color: white;
+		background-color: deepskyblue;
 		border-radius: 5px;
-		border: 1px solid lightyellow;
+		border: 1px solid;
 		display: block;
 		width: 500px;
 		height: 50px;
@@ -35,7 +32,7 @@
 	  width: 100%;
 	}
 	#list td, #list th {
-	  border: 1px solid white;
+	  border: 1px solid #ddd;
 	  padding: 8px;
 	  text-align:center;
 	}
@@ -55,8 +52,13 @@
 	  padding-bottom: 12px;
 	  text-align: center;
 	  border-radius: 5px;
-	  background-color: lightcoral;
-	  color: dimgray;
+	  background-color: deepskyblue;
+	  color: beige;
+	}
+	#logout_info {
+		text-align: left;
+		left: 12px;
+		position: relative;
 	}
 </style>
 <script>
@@ -64,28 +66,30 @@
 		var a = confirm("정말로 삭제하겠습니까?");
 		if(a) location.href='deleteok/' + id;
 	}
-	// function logout() {
-	// 	location.href='logout';
-	// }
 </script>
 </head>
 	<div>
-		<h1 id="p_title">**한동 중고 마켓**</h1>
+		<h1 id="p_title">한동 중고 마켓</h1>
 		<div class="d-flex justify-content-end mb-3">
-			<button type="button" onclick="location.href='logout'">logout</button><br/>
 <%--		<a href="addpostform.jsp" class="btn btn-primary" role="button" aria-pressed="true">Register Now</a>--%>
 			<button type="button" onclick="location.href='add'">Register Now</button><br/>
 	</div>
 	<div>
+		<div id="logout_info">
+			<a href="login/logout"><i class="gg-log-out"></i></a>
+		</div>
 		<table id="list" width="90%">
 		<tr>
-			<th>No</th>
+<%--			<th>No</th>--%>
+			<th>Id</th>
+			<th>Type</th>
 			<th>Title</th>
 			<th>Price</th>
 			<th>Content</th>
-			<th>Meeting Place</th>
+<%--			<th>Photo</th>--%>
+			<th>Writer</th>
+			<th>Place</th>
 			<th>Number</th>
-			<th>Category</th>
 			<th>Regdate</th>
 			<th>Edit</th>
 			<th>Delete</th>
@@ -95,12 +99,13 @@
 			<tr>
 <%--				<td>${fn:length(list)-status.index}</td>--%>
 				<td>${u.seq}</td>
+				<td>${u.type}</td>
 				<td>${u.title}</td>
 				<td>${u.price}</td>
 				<td>${u.content}</td>
+				<td>${u.writer}</td>
 				<td>${u.place}</td>
 				<td>${u.number}</td>
-				<td>${u.category}</td>
 <%--				<td>--%>
 <%--					<c:if test="${u.photo ne ''}"><br/>--%>
 <%--					<img src="${pageContext.request.contextPath}/upload/${u.photo}" class="photo" width="300" height="300"></c:if>--%>

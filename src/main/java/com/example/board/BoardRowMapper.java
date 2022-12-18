@@ -11,11 +11,12 @@ public class BoardRowMapper implements RowMapper<BoardVO> {
         BoardVO vo = new BoardVO();
         vo.setSeq(rs.getInt("seq"));
         vo.setTitle(rs.getString("title"));
-        vo.setPrice(rs.getInt("price"));
         vo.setContent(rs.getString("content"));
+        vo.setWriter(rs.getString("writer"));
+        vo.setType(rs.getString("type"));
+        vo.setPrice(rs.getString("price"));
         vo.setPlace(rs.getString("place"));
         vo.setNumber(rs.getString("number"));
-        vo.setCategory(rs.getString("category"));
         vo.setRegdate(rs.getDate("regdate"));
         return vo;
     }
